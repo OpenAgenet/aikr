@@ -11,12 +11,17 @@
   h1{font-size:1.5em;margin:0 0 .1em}
   .sub{color:#5a6570;font-size:.92em;margin:0 0 .8em}
   .wd{display:inline-block;background:#fbe9c8;border:1px solid #e3b873;color:#7a4c00;padding:1px 8px;border-radius:4px;font-size:.78em;font-weight:700}
+  .meta{display:grid;grid-template-columns:max-content 1fr;gap:2px 14px;font-size:.85em;color:#33404d;background:#f7f9fb;border:1px solid #dde4ec;border-radius:6px;padding:.6em .9em;margin:.4em 0 .8em}
+  .meta dt{font-weight:600;color:#5a6570} .meta dd{margin:0}
+  .feedback{font-size:.86em;background:#eef7f1;border:1px solid #bfe0cb;border-left:5px solid #1a7f37;border-radius:6px;padding:.6em .9em;margin:.4em 0 1em}
+  .feedback b{color:#1a7f37}
   .legend{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;font-size:.8em;color:#5a6570;margin:.6em 0}
   .legend b{font-weight:600}
   .sw{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:5px;vertical-align:-1px}
   .aikr-band{background:linear-gradient(90deg,#efeefc,#f6f5fe);border:1px solid #cfcbf0;border-left:5px solid #534AB7;border-radius:7px;padding:.55em .9em;margin:.6em 0 .4em;font-size:.9em}
   .aikr-band b{color:#534AB7}
-  .board{display:grid;grid-template-columns:84px repeat(5,1fr);gap:6px;margin-top:.5em}
+  .board-wrap{overflow-x:auto}
+  .board{display:grid;grid-template-columns:84px repeat(5,minmax(120px,1fr));gap:6px;margin-top:.5em;min-width:700px}
   .hcell{font-size:.74em;font-weight:700;color:var(--blue);text-align:center;padding:4px 2px;text-transform:uppercase;letter-spacing:.02em}
   .blabel{display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);font-size:.74em;font-weight:700;letter-spacing:.04em;border-radius:6px}
   .blabel.open{background:#e7f6ec;color:#1a7f37}
@@ -25,24 +30,46 @@
   .cell.open{background:#f4fbf6}
   .cell.gated{background:#fef6f5}
   .chip{font-size:.72em;line-height:1.2;padding:3px 6px;border-radius:5px;border:1px solid;cursor:default;background:#fff;display:inline-flex;align-items:center;gap:3px;max-width:100%}
-  .chip:hover{filter:brightness(.96);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+  .chip:hover,.chip:focus{filter:brightness(.96);box-shadow:0 1px 4px rgba(0,0,0,.12);outline:none}
   .w3c{border-color:#1D9E75;color:#0e6b4e} .ietf{border-color:#2D7DD2;color:#1d5a96}
   .ind{border-color:#D85A30;color:#a8410f} .gov{border-color:#8A8780;color:#5f5d57}
   .mk{font-size:.85em} .ok{color:#1a7f37} .q{color:#9a6700}
+  .new{font-size:.75em;font-weight:700;color:#fff;background:#534AB7;border-radius:3px;padding:0 3px;margin-left:2px}
   #panel{margin-top:.8em;min-height:38px;border:1px solid var(--line);border-radius:6px;background:#f6f9fc;padding:8px 11px;font-size:.84em;color:#5a6570}
   .note{color:#5a6570;font-size:.8em;margin-top:.8em}
+  .changes{font-size:.82em;color:#33404d;margin-top:1em}
+  .changes h2{font-size:1em;margin:.2em 0 .3em;color:var(--blue)}
+  .changes ul{margin:.2em 0;padding-left:1.2em}
 </style>
 </head>
 <body>
 <h1>Agentic AI Standards Landscape — Map</h1>
-<p class="sub"><span class="wd">WORKING DRAFT</span> &nbsp; Each effort placed by framework layer (←→) and openness (open ▲ / gated ▼). Hover a chip for detail. W3C AI KR Community Group.</p>
+<p class="sub"><span class="wd">WORKING DRAFT</span> &nbsp; Each effort placed by framework layer (←→) and openness (open ▲ / gated ▼). Hover or tap a chip for detail. W3C AI KR Community Group.</p>
+
+<dl class="meta">
+  <dt>First published</dt><dd>26 June 2026</dd>
+  <dt>Last updated</dt><dd>26 October 2026</dd>
+  <dt>This version</dt><dd><a href="https://w3c-cg.github.io/aikr/landscape/">https://w3c-cg.github.io/aikr/landscape/</a></dd>
+  <dt>Source folder</dt><dd><a href="https://github.com/w3c-cg/aikr/tree/main/landscape">github.com/w3c-cg/aikr/tree/main/landscape</a></dd>
+  <dt>Editor</dt><dd>W3C AI KR Community Group</dd>
+</dl>
+
+<div class="feedback">
+  <b>Comments and suggestions welcome.</b> If an effort is missing, misplaced or out of date,
+  <a href="https://github.com/w3c-cg/aikr/issues/new?title=%5Blandscape%5D%20">open an issue</a> (please start the title with <code>[landscape]</code>),
+  propose a change to the file in the <a href="https://github.com/w3c-cg/aikr/tree/main/landscape">landscape folder</a>,
+  or write to <a href="mailto:public-aikr@w3.org">public-aikr@w3.org</a>.
+  Contributions to the repository require participation in the
+  <a href="https://www.w3.org/community/aikr/">AI KR Community Group</a> so that the W3C CLA covers them.
+</div>
 
 <nav style="font-size:.85em;color:#5a6570;background:#f0f4fa;border:1px solid #cdd9ea;border-radius:6px;padding:.6em .9em;margin:.4em 0 1.2em">
   <strong style="color:#005a9c">AI KR CG &mdash; read together:</strong>
   <a href="https://w3c-cg.github.io/aikr/">Index</a> &middot;
-  <a href="https://w3c-cg.github.io/aikr/summary/">Summary &amp; Repository Map</a> &middot;
+  <a href="https://w3c-cg.github.io/aikr/taxonomy/">Taxonomy</a> &middot;
+  <a href="https://w3c-cg.github.io/aikr/VOCAB29June/">Vocabulary</a> &middot;
+  <a href="https://w3c-cg.github.io/aikr/standards/">Standards Inventory &amp; Gap Analysis</a> &middot;
   <a href="https://w3c-cg.github.io/aikr/map/">File Map</a> &middot;
-  <a href="https://w3c-cg.github.io/aikr/sdo-inventory/">Standards Inventory</a> &middot;
   <a href="https://w3c-cg.github.io/aikr/landscape/">Landscape Map</a>
 </nav>
 
@@ -51,14 +78,15 @@
   <span><span class="sw" style="background:#1D9E75"></span>W3C</span>
   <span><span class="sw" style="background:#2D7DD2"></span>IETF</span>
   <span><span class="sw" style="background:#D85A30"></span>Industry</span>
-  <span><span class="sw" style="background:#8A8780"></span>Governance</span>
-  <span>&nbsp;|&nbsp; <span class="ok">✓</span> verified live · <span class="q">~</span> unconfirmed</span>
+  <span><span class="sw" style="background:#8A8780"></span>Governance / SDO</span>
+  <span>&nbsp;|&nbsp; <span class="ok">✓</span> verified live · <span class="q">~</span> unconfirmed · <span class="new">NEW</span> added October 2026</span>
 </div>
 
 <div class="aikr-band">
   <b>AI KR CG</b> — the representational / mapping layer <em>over</em> the whole landscape below: it tracks, aligns and exposes these efforts using ontic maps and the AIAO + interoperability framework. <span class="ok">✓</span>
 </div>
 
+<div class="board-wrap">
 <div class="board" id="board">
   <div></div>
   <div class="hcell">Representation</div>
@@ -81,21 +109,32 @@
   <div class="cell gated" id="gated-trust"></div>
   <div class="cell gated" id="gated-gov"></div>
 </div>
+</div>
 
-<div id="panel">Hover a chip to see what each effort is working on and its access model.</div>
+<div id="panel">Hover or tap a chip to see what each effort is working on and its access model.</div>
 
-<p class="note">A sketch for the AI KR CG mapping exercise; placements are indicative. Full inventory with sources: <a href="https://w3c-cg.github.io/aikr/sdo-inventory/">SDO inventory (working draft)</a> · repo file map: <a href="https://w3c-cg.github.io/aikr/map/">w3c-cg.github.io/aikr/map/</a>. Community verification welcome.</p>
+<p class="note">A sketch for the AI KR CG mapping exercise; placements are indicative. Openness follows the participation model: W3C Community Groups, IETF and public-sector publications are shown as open; vendor-led and membership-based efforts as gated. Full inventory with sources: <a href="https://w3c-cg.github.io/aikr/standards/">Standards Inventory &amp; Gap Analysis</a> · repo file map: <a href="https://w3c-cg.github.io/aikr/map/">w3c-cg.github.io/aikr/map/</a>.</p>
+
+<div class="changes">
+  <h2>Change log</h2>
+  <ul>
+    <li><b>26 October 2026.</b> Added IETF agentproto, DAWN and WIMSE; W3C Agent Conformance and Benchmarking, AI Judgement Event, AI Computed Provenance and Agent-Ready Video CGs and the Web &amp; AI Interest Group; AAIF projects (Agent Skills, Open Responses, AGENTS.md, OpenEnv and OpenSandbox); x402 Foundation, MPP, UCP and ACP; ERC-8004; NIST CAISI, IMDA and Five Eyes guidance; OpenID AI Identity Management CG; IEEE P3833. WebMCP entry marked for re-check. Dates, feedback route and updated reading links added.</li>
+    <li><b>27 June 2026.</b> Revision of the first version.</li>
+    <li><b>26 June 2026.</b> First published.</li>
+  </ul>
+</div>
 
 <script>
 (function(){
-  // [label, cluster, band, layer, verified, focus]
+  // [label, cluster, band, layer, verified, focus, isNew]
   var N=[
     ["Semantic Agent Comm","w3c","open","rep","ok","Ontology-grounded agent messages (s-agent-comm)"],
     ["Ontology for Agents (oasis)","w3c","open","rep","ok","Agent/service ontology — aligns w/ AIAO & agonalign"],
     ["Web Content Browser for Agents","w3c","open","rep","ok","Agent-readable representation of web pages"],
     ["Procedural Memory KR","w3c","open","rep","ok","KR of procedures / skills"],
     ["Cognitive AI","w3c","open","rep","ok","Cognitive architectures / primitives"],
-    ["Web ML — WebMCP","w3c","open","rep","ok","navigator.modelContext (proposed); tool/context exposure"],
+    ["Web ML — WebMCP","w3c","open","rep","q","Web ML CG draft report; tool/context exposure to agents. Reported move from navigator.modelContext to document.modelContext in the July draft, to be confirmed against the spec"],
+    ["Agent-Ready Video","w3c","open","rep","ok","Making relevant video segments findable and playable by agents, with creator credit",1],
     ["RDF & SPARQL","w3c","open","rep","q","Graph data model + query (base)"],
     ["SHACL (Data Shapes)","w3c","open","rep","ok","Shapes, constraints, validation"],
 
@@ -107,41 +146,66 @@
     ["AI Agent Memory Interop","w3c","open","interop","ok","Portable agent memory / state"],
     ["Voice Interaction","w3c","open","interop","ok","Voice UI controls, dialogue — voiceAI"],
     ["Web of Things","w3c","open","interop","ok","Thing Description: properties/actions/events"],
+    ["IETF agentproto WG","ietf","open","interop","ok","Agent Communication Protocols WG (active). Agentic dialog management protocol, reference architecture, use cases. Names MCP and A2A as application layers it does not change",1],
+    ["IETF DAWN (proposed WG)","ietf","open","interop","ok","Discovery of Agents With Names: learning an agent's type, location and protocols before invoking it; DNS / mDNS. Charter under IESG/IAB review",1],
 
     ["AIVS","w3c","open","trust","ok","Agentic integrity verification (cf. Sanctuary)"],
     ["Agent Declaration & Assurance","w3c","open","trust","ok","Capability / assurance manifests"],
     ["Agent Identity Registry","w3c","open","trust","ok","Agent identity registration/resolution"],
     ["Agent Trust Protocol","w3c","open","trust","ok","Trust signals / handshake"],
+    ["Agent Conformance & Benchmarking","w3c","open","trust","ok","Open, reproducible methods for measuring conformance of agents to identity, protocol, memory and proof specifications",1],
+    ["AI Judgement Event","w3c","open","trust","ok","Recording, transferring and verifying responsibility; cryptographic receipts for AI-mediated decisions",1],
+    ["AI Computed Provenance","w3c","open","trust","ok","Machine-checked, cryptographically founded record of how each fact in AI-assisted research is known",1],
     ["Verifiable Credentials","w3c","open","trust","ok","Issuer · holder · verifier; proofs"],
     ["DID","w3c","open","trust","ok","Decentralized identifiers"],
     ["Solid","w3c","open","trust","ok","Pods; data sovereignty"],
     ["IETF draft-stone-vcap/atep/aivs","ietf","open","trust","ok","Escrow, reputation, proof — cite AI KR CG TN"],
+    ["IETF WIMSE","ietf","open","trust","ok","Workload identity WG (chartered 2024); current home for agent identity drafts, none yet adopted",1],
+    ["ERC-8004","ind","open","trust","ok","Ethereum Draft EIP for agent registries; mainnet reference deployments since January 2026",1],
+    ["OpenID AI Identity Mgmt CG","gov","open","trust","q","Use cases, terminology and gaps for agent identity; protocol work out of scope. Access model to be confirmed",1],
 
     ["AI Content Disclosure","w3c","open","gov","ok","Provenance / disclosure of AI content"],
+    ["W3C Web & AI IG","w3c","open","gov","ok","Interest Group forum on how AI intersects with Web technologies; chartered to November 2027 (public-webai)",1],
     ["IETF AIPREF","ietf","open","gov","ok","AI content-usage preferences"],
     ["NIST AI RMF","gov","open","gov","q","Govern · Map · Measure · Manage (open gov pub)"],
+    ["NIST CAISI Agent Standards","gov","open","gov","ok","AI Agent Standards Initiative (February 2026); NCCoE agent identity and authorization concept paper; agent overlays to SP 800-53 in development",1],
+    ["IMDA Agentic AI Framework","gov","open","gov","ok","Singapore Model AI Governance Framework for Agentic AI",1],
+    ["Five Eyes agentic guidance","gov","open","gov","ok","Careful Adoption of Agentic AI Services (CISA, NSA and partners)",1],
 
     ["MCP","ind","gated","rep","ok","Tools/resources/prompts — Anthropic→LF (AAIF)"],
     ["Microsoft NLWeb","ind","gated","rep","q","Natural-language endpoints over sites"],
+    ["Agent Skills (AAIF)","ind","gated","rep","ok","Open format packaging instructions, scripts and resources that agents load on demand",1],
+    ["AGENTS.md (AAIF)","ind","gated","rep","ok","One of the three AAIF launch projects, with MCP and goose",1],
+    ["OpenEnv · OpenSandbox (AAIF)","ind","gated","rep","ok","RL environment framework and hub; sandbox runtime for AI applications",1],
 
-    ["A2A","ind","gated","interop","q","Agent Cards; task lifecycle — Google→LF (AAIF)"],
+    ["A2A","ind","gated","interop","ok","Agent Cards; task lifecycle — Google→LF (AAIF)"],
     ["AGNTCY","ind","gated","interop","q","Agent directory · identity · observability (LF)"],
+    ["Open Responses (AAIF)","ind","gated","interop","ok","Open spec for interoperable LLM interfaces across providers",1],
+    ["Google UCP","ind","gated","interop","ok","Universal Commerce Protocol: discovery to checkout to order management; aligns with AP2, reachable via A2A or MCP",1],
 
     ["Google AP2","ind","gated","trust","ok","Agent payments: mandates, settlement — conduit"],
+    ["ACP (Agentic Commerce)","ind","gated","trust","ok","Agentic Commerce Protocol (Stripe, OpenAI, Meta); Apache-2.0",1],
+    ["x402 Foundation","ind","gated","trust","ok","HTTP-native payments for agents and APIs; Linux Foundation body since July 2026",1],
+    ["MPP (Stripe · Tempo)","ind","gated","trust","ok","Machine Payments Protocol: HTTP 402 challenge, agent pays, receives receipt",1],
 
     ["ISO/IEC SC 42","gov","gated","gov","q","AI vocabulary, risk, management systems"],
-    ["IEEE 7003 / P7000","gov","gated","gov","q","Algorithmic bias & ethics (membership)"]
+    ["IEEE 7003 / P7000","gov","gated","gov","q","Algorithmic bias & ethics (membership)"],
+    ["IEEE P3833","gov","gated","gov","ok","Framework for proactive AI agents with multimodal HCI (active PAR)",1]
   ];
   var panel=document.getElementById('panel');
+  function show(n){
+    panel.innerHTML='<b style="color:#1a1a1a">'+n[0]+'</b> &nbsp;'+n[5]+
+      ' &nbsp;<span style="color:'+(n[2]==='open'?'#1a7f37':'#b3261e')+'">['+(n[2]==='open'?'open · web':'gated')+']</span>';
+  }
   N.forEach(function(n){
     var cell=document.getElementById(n[2]+"-"+n[3]); if(!cell) return;
     var c=document.createElement('span');
     c.className="chip "+({w3c:'w3c',ietf:'ietf',ind:'ind',gov:'gov'}[n[1]]);
-    c.innerHTML='<span class="mk '+n[4]+'">'+(n[4]==='ok'?'✓':'~')+'</span>'+n[0];
-    c.addEventListener('mouseenter',function(){
-      panel.innerHTML='<b style="color:#1a1a1a">'+n[0]+'</b> &nbsp;'+n[5]+
-        ' &nbsp;<span style="color:'+(n[2]==='open'?'#1a7f37':'#b3261e')+'">['+(n[2]==='open'?'open · web':'gated')+']</span>';
-    });
+    c.tabIndex=0;
+    c.innerHTML='<span class="mk '+n[4]+'">'+(n[4]==='ok'?'✓':'~')+'</span>'+n[0].replace(/&/g,'&amp;')+(n[6]?'<span class="new">NEW</span>':'');
+    c.addEventListener('mouseenter',function(){show(n);});
+    c.addEventListener('focus',function(){show(n);});
+    c.addEventListener('click',function(){show(n);});
     cell.appendChild(c);
   });
 })();
